@@ -2,6 +2,13 @@ pipeline {
     // master executor should be set to 0
     agent any
     stages {
+	
+	stage('Pull Latest Image') {
+            steps {
+                
+                bat "docker pull shubhamit09/selenium-docker"
+            }	
+        }
         stage('Start Grid') {
             steps {
                 
