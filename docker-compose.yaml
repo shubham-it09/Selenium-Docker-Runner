@@ -20,7 +20,7 @@ services:
        entrypoint: /bin/sh
        working_dir: /usr/share/udemydir      
        volumes:
-         - ./output/volumes:/usr/share/udemydir/test-output
+         - ./volumes:/usr/share/udemydir/test-output
        
  
     
