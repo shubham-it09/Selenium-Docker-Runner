@@ -17,7 +17,7 @@ pipeline {
             }	
         }
 		
-   stage('Build Grid Down') {
+   stage('Stop grid') {
             steps {
                 //sh
                 bat  "docker-compose down"

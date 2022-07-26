@@ -13,7 +13,7 @@ pipeline {
 		stage('Running the test') {
             steps {
                 
-                bat "docker-compose up testng.xml"
+                bat "docker-compose up testng1"
             }	
         }
 		
