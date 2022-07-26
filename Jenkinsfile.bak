@@ -22,7 +22,7 @@ pipeline {
 		{
 		always
 		{
-			archiveArtifacts artifacts: 'volumes'
+			archiveArtifacts artifacts: "**/*."
 			 bat  "docker-compose down"
 		}
 		}
