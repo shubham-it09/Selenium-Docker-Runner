@@ -17,13 +17,14 @@ pipeline {
             }	
         }
 		
-   stage('Stop grid') {
-            steps {
-                //sh
-                bat  "docker-compose down"
-            }
-        }
-		
+		}
+		Post
+		{
+		always
+		{
+			archiveArtifacts artifacts: 'output/**'
+			 bat  "docker-compose down"
+		}
 		}
         
 }

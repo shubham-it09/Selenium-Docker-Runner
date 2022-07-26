@@ -13,7 +13,7 @@ pipeline {
 		stage('Running the test') {
             steps {
                 
-                bat "docker-compose up testng.xml"
+                bat "docker-compose up testng1"
             }	
         }
 		
@@ -24,6 +24,14 @@ pipeline {
             }
         }
 		
+		}
+		Post
+		{
+		always
+		{
+			archiveArtifacts artifacts: 'output/**'
+			 bat  "docker-compose down"
+		}
 		}
         
 }
