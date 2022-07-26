@@ -2,15 +2,22 @@ pipeline {
     // master executor should be set to 0
     agent any
     stages {
-        stage('Run Test') {
+        stage('Start Grid') {
             steps {
                 
-                bat "docker-compose up"
+                bat "docker-compose up -d hub chrome"
             }	
         }
 		
 		
-        stage('Build Grid Down') {
+		stage('Running the test') {
+            steps {
+                
+                bat "docker-compose up testng.xml"
+            }	
+        }
+		
+   stage('Stop grid') {
             steps {
                 //sh
                 bat  "docker-compose down"
